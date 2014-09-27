@@ -10,7 +10,7 @@ public class Scheduler {
 		BufferedReader fileLines = new BufferedReader(new FileReader(fileName));
 		
 		//read in the first line which is not a job
-		fileLines.readLine())
+		fileLines.readLine();
 		
 		String line;
 		int totalTime =0;
@@ -49,7 +49,7 @@ public class Scheduler {
 			BufferedReader br = 
 					new BufferedReader(new InputStreamReader(System.in));
 
-			String fileName=br.readLine() ;
+			String fileName=br.readLine();
 			br.close();
 			fcfsScheduler(fileName);
 			//TODO the other schedulers
