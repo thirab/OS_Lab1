@@ -56,13 +56,14 @@ public class FCFS_Scheduler {
 	 *@param args
 	 */
 	public static void main(String[] args) throws IOException {
-
-			BufferedReader br = 
-					new BufferedReader(new InputStreamReader(System.in));
-
-			String fileName=br.readLine();
-			br.close();
-			fcfsScheduler(fileName);
+			
+			if(args.length ==0){
+				System.out.println("There was no file specified");
+				return;
+			}
+			String message = args[0];
+			
+			fcfsScheduler(message);
 			//TODO the other schedulers
 
 	}
