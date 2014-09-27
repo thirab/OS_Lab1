@@ -8,6 +8,10 @@ public class Scheduler {
 	
 	public static void fcfsScheduler(String fileName) throws IOException{
 		BufferedReader fileLines = new BufferedReader(new FileReader(fileName));
+		
+		//read in the first line which is not a job
+		fileLines.readLine())
+		
 		String line;
 		int totalTime =0;
 		int processes =0;
