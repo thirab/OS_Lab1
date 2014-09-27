@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-public class Scheduler {
+public class FCFS_Scheduler {
 	
 	public static void fcfsScheduler(String fileName) throws IOException{
 		BufferedReader fileLines = new BufferedReader(new FileReader(fileName));
@@ -26,12 +26,15 @@ public class Scheduler {
 			//this is a new process
 			processes++;
 			//the wait time is the time all inputs ahead of this process have taken
-			waitTime+=totalTime;
+			if(jobId!=1){
+				waitTime+=seconds;
+			}
 			//the total time is totaltime + the runtime of this process
 			totalTime+=seconds;
 		   // process the line.
 		}
 		System.out.println("For fcfs scheduler: ");
+		System.out.println("The number of processes are: "+ processes);
 		System.out.println("The Turnaround is: " + totalTime);
 		System.out.println("The average time is: " + totalTime/processes);
 		System.out.println("The throughput is: " + processes/(totalTime/60) );
