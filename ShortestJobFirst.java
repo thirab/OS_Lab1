@@ -15,13 +15,13 @@ public class ShortestJobFirst {
 	
 	public static void main(String args[]) {
 		
+		// If no arguments are entered.
 		if (args.length < 1) {
 			System.out.println("Please enter a file name as a command line argument!");
 			return;
 		}
-		String fileName = args[0];
-		File inputFile = new File(fileName);	
 		try {
+			File inputFile = new File(args[0]);
 			FileReader fileReader = new FileReader(inputFile);
 			BufferedReader br = new BufferedReader(fileReader);
 			ArrayList<Job> jobs = new ArrayList<Job>();
@@ -34,12 +34,11 @@ public class ShortestJobFirst {
 				String[] line = str.split(",");
 				jobs.add(new Job(toInt(line[0]), toInt(line[1])));
 			}
-			
-			// Sorting them in increasing order of CPU Burst Time
-			sortJobList(jobs);
-			
-			// Setting the number of jobs
 			int numJobs = jobs.size();
+			
+			// Sorting them in increasing order of CPU Burst Time. For equal burst times, they are sorted in increasing
+			// order of job ids.
+			sortJobList(jobs);
 			
 			// The waiting time for the first job will be 0.
 			jobs.get(0).setWaitingTime(0);
@@ -71,7 +70,7 @@ public class ShortestJobFirst {
 		} catch (FileNotFoundException e1) {
 			System.out.println("Given file was not found!");
 			e1.printStackTrace();
-        } catch (IOException e) {
+        	} catch (IOException e) {
 			System.out.println("Incorrect input was entered!");
 			e.printStackTrace();
 		}
