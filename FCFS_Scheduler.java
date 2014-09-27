@@ -27,7 +27,7 @@ public class FCFS_Scheduler {
 			processes++;
 			//the wait time is the time all inputs ahead of this process have taken
 			if(jobId!=1){
-				waitTime+=seconds;
+				waitTime+=totalTime;
 			}
 			//the total time is totaltime + the runtime of this process
 			totalTime+=seconds;
@@ -37,7 +37,7 @@ public class FCFS_Scheduler {
 		System.out.println("The number of processes are: "+ processes);
 		System.out.println("The Turnaround is: " + totalTime);
 		System.out.println("The average time is: " + totalTime/processes);
-		System.out.println("The throughput is: " + processes/(totalTime/60) );
+		System.out.println("The throughput is: " + processes/totalTime*60 );
 		System.out.println("The wait time is: " + waitTime);
 		System.out.println("The Average wait time is: " + waitTime/processes);
 		System.out.println("------");
