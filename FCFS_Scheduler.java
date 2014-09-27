@@ -42,7 +42,7 @@ public class FCFS_Scheduler {
 		//print to terminal user
 		System.out.println("For fcfs scheduler: ");
 		System.out.println("The number of processes are: "+ processes);
-		System.out.println("The Turnaround is: " + totalTime);
+		System.out.println("The Turnaround is: " + (double)(totalTime+waitTime)/processes);
 		System.out.println("The average time is: " + (double) totalTime/processes);
 		System.out.println("The throughput is: " + (double) processes/totalTime*60 );
 		System.out.println("The wait time is: " + waitTime);
