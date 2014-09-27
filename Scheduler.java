@@ -32,8 +32,8 @@ public class Scheduler {
 		   // process the line.
 		}
 		System.out.println("For fcfs scheduler: ");
-		System.out.println("The Turnaround is" + totalTime);
-		System.out.println("The average time is" + totalTime/processes);
+		System.out.println("The Turnaround is: " + totalTime);
+		System.out.println("The average time is: " + totalTime/processes);
 		System.out.println("The throughput is: " + processes/(totalTime/60) );
 		System.out.println("The wait time is: " + waitTime);
 		System.out.println("The Average wait time is: " + waitTime/processes);
